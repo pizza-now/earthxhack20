@@ -1,20 +1,20 @@
-import React, {Component} from 'react'
-import {Route, Switch} from 'react-router-dom'
-import {Guest} from "./components/guest"
+import React, { Component } from 'react'
+import { Route, Switch } from 'react-router-dom'
+import Guest from "./components/guest"
 import SplashPage from './components/splash-page'
 
 
 class Routes extends Component {
-  render(){
+  render() {
     return (
-    <Switch>
-      {/* Routes placed here are available for everyone */}
-      {<Route path="/guest" component={Guest} />}
+      <Switch>
+        {/* Routes placed here are available for everyone */}
+        {<Route path="/guest" component={Guest} />}
 
-      {/* Displays the SplashPage component as a fallback */}
-      <Route component={SplashPage} />
-    </Switch>
-      )
+        {/* Displays the SplashPage component as a fallback */}
+        <Route component={SplashPage} />
+      </Switch>
+    )
   }
 }
 
