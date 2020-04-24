@@ -2,6 +2,8 @@ const express = require("express")
 const app = express()
 const path = require('path')
 const PORT = process.env.PORT || 8080
+const db = require('./db')
+module.exports = app
 
 // Body parsing middleware
 app.use(express.json())
@@ -25,3 +27,6 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`)
 })
+
+//Sync with db
+db.sync()

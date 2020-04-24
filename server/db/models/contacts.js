@@ -19,7 +19,7 @@ const Contact = db.define('contact', {
     }
   },
   phoneNumber: {
-      type: Sequelize.NUMBER,
+      type: Sequelize.INTEGER,
       unique: true,
       allowNull: true,
       validate: {
