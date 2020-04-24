@@ -2,6 +2,7 @@ const router = require('express').Router()
 const { Contact } = require('../db/models')
 module.exports = router
 
+//confirmed this works with Postman
 router.get('/', async (req, res, next) => {
   try {
     const contacts = await Contact.findAll({
@@ -15,7 +16,7 @@ router.get('/', async (req, res, next) => {
   }
 })
 
-//I don't know if we need this one
+//I don't know if we need this one; confirmed this works with Postman
 router.get('/:contactId', async (req, res, next) => {
   try {
     const contact = await Contact.findByPk(req.params.contactId)
@@ -25,17 +26,26 @@ router.get('/:contactId', async (req, res, next) => {
   }
 })
 
+//confirmed this works with Postman
 router.post('/', async (req, res, next) => {
   try {
-    const newContact = Contact.create({
+    const newContact = {
+      fullName: req.body.fullName,
+      email: req.body.email,
+      phoneNumber: req.body.phoneNumber,
       userId: req.user.id
-    }, req.body)
-    res.send(newContact)
+    }
+    await Contact.create(newContact)
+    const confirmContacts = await Contact.findAll({
+      where: {userId: req.params.userId}
+    })
+    res.send(confirmContacts)
   } catch (error) {
     next(error)
   }
 })
 
+//might want to consider making this a router.patch so you don't have to enter in all the info again
 router.put('/:contactId', async (req, res, next) => {
   try {
     const contact = await Contact.findByPk(req.params.contactId)
@@ -46,7 +56,7 @@ router.put('/:contactId', async (req, res, next) => {
   }
 })
 
-
+//didn't test this but I assume this works
 router.delete('/:contactId', async (req, res, next) => {
   try {
     const contact = await Contact.findByPk(req.params.contactId)

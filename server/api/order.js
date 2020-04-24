@@ -4,7 +4,7 @@ module.exports = router
 
 router.post('/', async (req, res, next) => {
   try {
-    user = req.user ? req.user : null
+    let user = req.user ? req.user : null
     await Order.create({ userId: user.id }, req.body)
     res.sendStatus(200)
   } catch (error) {
