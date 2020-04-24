@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node script/seed.js",
     "start": "npm run start-server & npm run build-watch",
     "start-dev": "NODE_ENV='development' npm run build-watch & NODE_ENV='development' npm run start-server",
     "start-server": "nodemon server -e html,js,scss --ignore public --ignore client",
