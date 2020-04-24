@@ -1,4 +1,3 @@
-const crypto = require('crypto')
 const Sequelize = require('sequelize')
 const db = require('../db')
 
@@ -29,4 +28,4 @@ const Contact = db.define('contact', {
     }
 })
 
-module.exports = User
+module.exports = Contact
