@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { getContacts } from '../store/contacts'
+import { getContacts, deleteContact } from '../store/contacts'
 import AddContactForm from './addContactForm'
+import UpdateContactForm from './updateContactForm'
 
 const Contacts = () => {
   const contacts = useSelector(state => state.contacts)
   const dispatch = useDispatch()
   const [form, setForm] = useState('')
+  const [form2, setForm2] = useState('')
   useEffect(() => {
     dispatch(getContacts())
   }, [])
@@ -16,9 +18,14 @@ const Contacts = () => {
       {contacts.length ? (
         contacts.map(contact => (
           <div key={contact.id}>
-            {contact.fullName}
-            {contact.email}
-            {contact.phoneNumber}
+            <p>Name: {contact.fullName}</p>
+            <p>Email: {contact.email}</p>
+            <p>Phone number: {contact.phoneNumber}</p>
+
+            <button onClick={() => !form2 ? setForm2(<UpdateContactForm contact={contact} />) : setForm2('')} className='button'>Update</button>
+            {form2 ? <UpdateContactForm contact={contact} /> : ''}
+
+            <button onClick={() => dispatch(deleteContact(contact.id))}>Remove referral</button>
           </div>
         ))
       ) : (
