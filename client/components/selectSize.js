@@ -18,9 +18,15 @@ export default function SelectSize() {
     <div className='pizza'>
     <ThemeProvider theme={theme}>
     <div>
-      <Button variant="contained" color="primary" href= "/referrals">
+      <img src ={'https://clipartion.com/wp-content/uploads/2015/10/whole-pepperoni-pizza-clipart-pizza-set-royalty-free-cliparts.jpg'} width={140} height={140} mode='fit' />
+      </div>
+      <div>
+      <Button variant="contained" color="primary">
         Small
       </Button>
+      </div>
+      <div>
+      <img src ={'https://clipartion.com/wp-content/uploads/2015/10/whole-pepperoni-pizza-clipart-pizza-set-royalty-free-cliparts.jpg'} width={175} height={175} mode='fit' />
       </div>
       <div>
       <Button variant="contained" color="primary">
@@ -28,13 +34,24 @@ export default function SelectSize() {
       </Button>
       </div>
       <div>
+      <img src ={'https://clipartion.com/wp-content/uploads/2015/10/whole-pepperoni-pizza-clipart-pizza-set-royalty-free-cliparts.jpg'} width={225} height={225} mode='fit' />
+      </div>
+      <div>
       <Button variant="contained" color="primary">
         Large
       </Button>
       </div>
       </ThemeProvider>
+      <div>Customize Your Pizza</div>
       <div>
       <TextField id="filled-basic" label="Customize Your Pizza" variant="filled" />
+      </div>
+      <div>
+        <ThemeProvider theme={theme}>
+      <Button variant="contained" color="primary" href= "/referrals">
+        Submit
+      </Button>
+      </ThemeProvider>
       </div>
     </div>
   );
