@@ -41,7 +41,7 @@ export const addContact = (contact) => async dispatch => {
 /**
  * REDUCER
  */
-export default function (state = defaultUser, action) {
+export default function (state = defaultContacts, action) {
   switch (action.type) {
     case GET_CONTACTS:
       return action.contacts
