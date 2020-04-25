@@ -20,7 +20,7 @@ router.get('/', async (req, res, next) => {
 router.get('/:contactId', async (req, res, next) => {
   try {
     const contact = await Contact.findByPk(req.params.contactId)
-    res.send(contact)
+    res.json(contact)
   } catch (error) {
     next(error)
   }
@@ -35,11 +35,8 @@ router.post('/', async (req, res, next) => {
       phoneNumber: req.body.phoneNumber,
       userId: req.user.id
     }
-    await Contact.create(newContact)
-    const confirmContacts = await Contact.findAll({
-      where: {userId: req.params.userId}
-    })
-    res.send(confirmContacts)
+    const createdContact = await Contact.create(newContact)
+    res.json(createdContact)
   } catch (error) {
     next(error)
   }
