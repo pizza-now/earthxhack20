@@ -12,7 +12,6 @@ router.put('/:id', async (req, res, next) => {
     })
     res.json(updatedUser)
   } catch (error) {
-    console.log('in user.put')
     next(error)
   }
 })

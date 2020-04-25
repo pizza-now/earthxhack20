@@ -8,7 +8,6 @@ router.post('/', async (req, res, next) => {
     await Order.create({ userId: userId }, req.body)
     res.sendStatus(200)
   } catch (error) {
-    console.log('error in order')
     next(error)
   }
 })

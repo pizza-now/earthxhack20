@@ -12,7 +12,6 @@ router.get('/', async (req, res, next) => {
     })
     res.json(contacts)
   } catch (err) {
-    console.log('error in contacts/router.get')
     next(err)
   }
 })
@@ -23,7 +22,6 @@ router.get('/:contactId', async (req, res, next) => {
     const contact = await Contact.findByPk(req.params.contactId)
     res.json(contact)
   } catch (error) {
-    console.log('error in contacts/router.get/:id')
     next(error)
   }
 })
@@ -40,7 +38,6 @@ router.post('/', async (req, res, next) => {
     const createdContact = await Contact.create(newContact)
     res.json(createdContact)
   } catch (error) {
-    console.log('error in contacts/router.post')
     next(error)
   }
 })
@@ -52,7 +49,6 @@ router.put('/:contactId', async (req, res, next) => {
     await contact.update(req.body)
     res.send(contact)
   } catch (error) {
-    console.log('error in contacts/router.put')
     next(error)
   }
 })
@@ -64,7 +60,6 @@ router.delete('/:contactId', async (req, res, next) => {
     await contact.destroy()
     res.sendStatus(204)
   } catch (err) {
-    console.log('error in contacts/router.delete')
     next(err)
   }
 })
