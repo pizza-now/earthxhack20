@@ -28,9 +28,6 @@ const Contacts = () => {
       }
       <button onClick={() => !form ? setForm(<AddContactForm />) : setForm('')} className='button'>Refer a friend</button>
       {form ? <AddContactForm /> : ''}
-      <Button variant="contained" color="primary" href="/confirmation">
-        Submit
-      </Button>
     </div>
   )
 }

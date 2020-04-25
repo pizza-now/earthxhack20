@@ -12,6 +12,7 @@ const Navbar = () => {
 
       <nav className="navbar-links">
         <Link to="/guest">Guest Checkout</Link>
+        <Link to="/referrals">Refer A Friend</Link>
       </nav>
     </div>
   )
