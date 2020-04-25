@@ -13,6 +13,11 @@ const Contacts = () => {
   useEffect(() => {
     dispatch(getContacts())
   }, [])
+
+  const setUpdateForm = () => !form2 ? setForm2(<UpdateContactForm />) : setForm2('')
+
+  const setAddForm = () => !form ? setForm(<AddContactForm />) : setForm('')
+
   return (
     <div>
       <h1>People you've referred:</h1>
@@ -23,8 +28,8 @@ const Contacts = () => {
             <p>Email: {contact.email}</p>
             <p>Phone number: {contact.phoneNumber}</p>
 
-            <button onClick={() => !form2 ? setForm2(<UpdateContactForm contact={contact} />) : setForm2('')} className='button'>Update</button>
-            {form2 ? <UpdateContactForm contact={contact} /> : ''}
+            <button onClick={setUpdateForm} className='button'>Update</button>
+            {form2 ? <UpdateContactForm contact={contact} setForm={setUpdateForm} /> : ''}
 
             <button onClick={() => dispatch(deleteContact(contact.id))}>Remove referral</button>
           </div>
@@ -33,8 +38,8 @@ const Contacts = () => {
           <div>No friends referred yet </div>
         )
       }
-      <button onClick={() => !form ? setForm(<AddContactForm />) : setForm('')} className='button'>Refer a friend</button>
-      {form ? <AddContactForm /> : ''}
+      <button onClick={setAddForm} className='button'>Refer a friend</button>
+      {form ? <AddContactForm setForm={setAddForm} /> : ''}
     </div>
   )
 }

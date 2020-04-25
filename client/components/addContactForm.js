@@ -3,11 +3,12 @@ import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { addContact } from '../store/contacts';
 
-function AddContactForm() {
+function AddContactForm(props) {
   const { handleSubmit, register } = useForm();
   const dispatch = useDispatch();
   const onSubmit = values => {
-    dispatch(addContact(values));
+    dispatch(addContact(values))
+    props.setForm()
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="form">

@@ -7,7 +7,8 @@ function UpdateContactForm(props) {
   const { handleSubmit, register } = useForm();
   const dispatch = useDispatch();
   const onSubmit = values => {
-    dispatch(updateContact(props.contact.id, values));
+    dispatch(updateContact(props.contact.id, values))
+    props.setForm()
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="form">
