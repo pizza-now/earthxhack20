@@ -43,7 +43,7 @@ body {
   padding: 0 10px;
   color: black;
 }
-main {
+#main {
   align-items: center;
   display: flex;
   flex-direction: column;
