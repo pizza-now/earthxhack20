@@ -56,6 +56,7 @@ h2 {
   color: black;
 }
 
+<<<<<<< HEAD
 .splash-options {
   padding-top: 36px;
   display: flex;
@@ -82,12 +83,16 @@ h2 {
   padding-top: 50px;
 }
 
+=======
+>>>>>>> 7305de89646c04a466e8ad699676f7b75436a735
 #main {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
+/* login and signup form */
 #auth-form-container {
   border-top: 1px solid black;
   background: rgb(66, 66, 66);
