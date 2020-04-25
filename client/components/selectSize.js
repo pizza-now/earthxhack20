@@ -18,7 +18,7 @@ export default function SelectSize() {
     <div className='pizza'>
     <ThemeProvider theme={theme}>
     <div>
-      <Button variant="contained" color="primary">
+      <Button variant="contained" color="primary" href= "/referrals">
         Small
       </Button>
       </div>
