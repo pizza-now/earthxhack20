@@ -1,6 +1,7 @@
 body {
   font-family: 'Inter', sans-serif;
   color: #011627;
+  margin: 0;
 }
 
 a {
@@ -45,10 +46,8 @@ input {
 
 .nav-container {
   position: sticky;
-  top: 0;
   height: 100px;
-  margin: -10px;
-  width: 101.25%;
+  width: 100%;
   top: 0;
   display: flex;
   flex-direction: row;
@@ -56,7 +55,6 @@ input {
   justify-content: space-between;
   align-items: center;
   background-color: #cc0f00;
-  color: black;
   z-index: 100;
   letter-spacing: 0.025em;
   padding: 16px;
@@ -79,7 +77,7 @@ input {
 
 .navbar-links a {
   padding: 0 10px;
-  color: black;
+  color: #fff;
 }
 
 /* Splash page */
@@ -131,31 +129,29 @@ input {
   color: red;
 }
 
- div.size-container{
+.size-container{
   padding: 20px;
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left : 50px
  }
 
- div.pizza{
+.pizza{
   padding: 20px;
-  align-items: center;
+  align-items: baseline;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-left : 50px
+  flex-wrap: wrap;
  }
 
- div.single-size{
-  padding: 20px;
+.single-size{
+  padding: 20px 50px;
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left : 50px
  }
 
 /* Guest Checkout */
@@ -168,7 +164,13 @@ input {
 }
 
 
-.referred-page {
+.referred-page, .guest-page {
   padding: 40px;
 }
 
+.customize-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
