@@ -3,11 +3,25 @@ import { Link } from 'react-router-dom'
 
 const SplashPage = () => {
   return (
-    <div>
-      <h1>Pizza NOW</h1>
-      <Link to='/login'>Login</Link>
-      <Link to='/Signup'>Signup</Link>
-      <Link to='/guest'>Checkout as a Guest</Link>
+    <div className='splash-options'>
+
+      <Link to='/login'>
+        <div className="login" className="splash-card">
+          <h2>Login</h2>
+        </div>
+      </Link>
+
+      <Link to='/Signup'>
+        <div className="signup" className="splash-card">
+          <h2>Signup</h2>
+        </div>
+      </Link>
+
+      <Link to='/guest'>
+        <div className="guest-checkout" className="splash-card">
+          <h2>Guest Checkout</h2>
+        </div>
+      </Link>
     </div>
   )
 }
