@@ -21,7 +21,7 @@ h2 {
   font-size: 16px;
   border-radius: 3px;
   max-width: 150px;
-  margin: 16px;
+  margin: 16px 16px 16px 0;
   border: none;
 }
 
@@ -117,15 +117,17 @@ input {
 /* login and signup form */
 
 .auth-form {
-  padding-top: 50px;
+  /* padding-top: 50px; */
+  display: flex;
+  flex-direction: column;
 }
 
 #auth-form-container {
-  border-top: 1px solid black;
-  background: rgb(66, 66, 66);
-  color: white;
+  color: #011627;
   padding: 20px;
 }
+
+
 
 /* Select Size Page */
 
