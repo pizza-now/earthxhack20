@@ -44,7 +44,7 @@ export default function SelectSize() {
       </ThemeProvider>
       <div>Customize Your Pizza</div>
       <div>
-      <TextField id="filled-basic" label="Customize Your Pizza" variant="filled" />
+      <TextField id="filled-basic" label="(Optional message)" variant="filled" />
       </div>
       <div>
         <ThemeProvider theme={theme}>
