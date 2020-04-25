@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter, Route, Switch } from 'react-router-dom'
-import { SplashPage, Login, Signup, Guest, Contacts, Home, SelectSize, Confirmation } from './components'
+import { SplashPage, Login, Signup, Guest, Contacts, Home, SelectSize, Confirmation, Profile } from './components'
 import { me } from './store';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
@@ -23,6 +23,7 @@ class Routes extends Component {
         <Route path="/guest" component={Guest} />
         <Route path="/referrals" component={Contacts} />
         <Route path="/confirmation" component={Confirmation} />
+        <Route path="/profile" component={Profile} />
         {/* Displays the SplashPage component as a fallback */}
         <Route component={SplashPage} />
       </Switch>
