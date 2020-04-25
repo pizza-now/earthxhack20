@@ -11,6 +11,7 @@ async function seed() {
     User.create({
       fullName: 'Alice Quinn',
       email: 'alice@email.com',
+      number: '3127478837',
       password: '123',
       address: '5 Tailwater Street Worcester, MA 01604',
       keyword: 'olives'
@@ -18,6 +19,7 @@ async function seed() {
     User.create({
       fullName: 'Quentin Coldwater',
       email: 'quentin@email.com',
+      number: '2124657566',
       password: '123',
       address: '9320 Lafayette Lane Grayslake, IL 60030',
       keyword: 'fillory'
@@ -25,6 +27,7 @@ async function seed() {
     User.create({
       fullName: 'Kady Diaz',
       email: 'kadyd@email.com',
+      number: '6467433337',
       password: '123',
       address: '7364 High Ave Pembroke Pines, FL 33028',
       keyword: 'oreos'
@@ -32,6 +35,7 @@ async function seed() {
     User.create({
       fullName: 'Margo Hanson',
       email: 'mhandon@email.com',
+      number: '4657676767',
       password: '123',
       address: '275 Oak Street Xenia, OH 45385',
       keyword: 'passionfruit'
@@ -39,6 +43,7 @@ async function seed() {
     User.create({
       fullName: 'Eliot Waugh',
       email: 'elwaugh@email.com',
+      number: '5165657676',
       password: '123',
       address: '997 Woodland Circle Lakeville, MN 55044',
       keyword: 'king'
@@ -46,6 +51,7 @@ async function seed() {
     User.create({
       fullName: 'Julia Wicker',
       email: 'jules@email.com',
+      number: '46596696606',
       password: '123',
       address: '5 Shady St Nampa, ID 83651',
       keyword: 'shady'
@@ -53,6 +59,7 @@ async function seed() {
     User.create({
       fullName: 'Penny Adiyodi',
       email: 'pennya@email.com',
+      number: '6463644444',
       password: '123',
       address: '75 Fieldstone Streett Troy, NY 12180',
       keyword: 'florida'
