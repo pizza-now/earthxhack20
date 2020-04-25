@@ -94,6 +94,7 @@ h2 {
   padding: 20px;
 }
  div.pizza{
+  padding: 20px;
   align-items: center;
   display: flex;
   flex-direction: column;
