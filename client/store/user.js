@@ -36,7 +36,7 @@ export const auth = (email, password, address, fullName, method) => async dispat
     if (method === "login"){
       res = await axios.post(`/auth/${method}`, { email, password })
     } else {
-      res = await axios.post(`/auth/${method}`, { email, password, fullName, address })
+      res = await axios.post(`/auth/${method}`, { email, password, address, fullName })
     }
   } catch (authError) {
     return dispatch(getUser({ error: authError }))
