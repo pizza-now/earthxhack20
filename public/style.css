@@ -198,3 +198,53 @@ input {
   flex-wrap: wrap;
 
 }
+
+.dropbtn {
+  display: none;
+}
+
+.dropdown{
+  display:none
+}
+
+@media screen and (max-width: 414px){
+  .dropdown {
+    display: flex;
+  }
+
+  #dropbtn {
+    display: none;
+  }
+
+  #dropbtnLabel{
+        display: block;
+    background-color: transparent;
+    color: white;
+    font-size: 250%;
+    border: none;
+    float: right;
+  }
+
+  .dropdown-links{
+    display: none;
+  }
+
+  #dropbtn:checked ~ .dropdown-links{
+    position: absolute;
+   width: 100%;
+    background-color: #cc0f00;
+    top: 100px;
+    right: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+
+
+  .navbar-links {
+    display: none;
+  }
+}
