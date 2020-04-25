@@ -43,12 +43,15 @@ body {
   padding: 0 10px;
   color: black;
 }
+
 #main {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
+/* login and signup form */
 #auth-form-container {
   border-top: 1px solid black;
   background: rgb(66, 66, 66);
