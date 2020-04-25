@@ -10,6 +10,7 @@ const Navbar = ({ handleClick, isLoggedIn }) => {
       {isLoggedIn ? (
         <div className="nav-container">
           <Link to='/home'>
+<<<<<<< HEAD
             <div className="nav-logo">
               <img src={'/assets/pizza-now.png'} alt="logo" className="logo" />
             </div>
@@ -20,6 +21,19 @@ const Navbar = ({ handleClick, isLoggedIn }) => {
               <Link to="/referrals">Refer A Friend</Link>
               <a href="#" onClick={handleClick}>
                 Logout
+=======
+          <div className="nav-logo">
+            <img src={'/assets/pizza-now.png'} alt="logo" className="logo"/>
+          </div>
+        </Link>
+        <nav className="navbar-links">
+        <div>
+          <Link to="/home">Home</Link>
+          <Link to="/profile">Profile</Link>
+          <Link to="/referrals">Refer A Friend</Link>
+          <a href="#" onClick={handleClick}>
+          Logout
+>>>>>>> 39d1da37fef14182b3e482dc2ed696deb3e9b808
           </a>
             </div>
           </nav>
