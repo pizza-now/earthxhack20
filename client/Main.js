@@ -1,13 +1,14 @@
 import React from 'react'
+import Navbar from './components/navbar'
+import Routes from './routes'
 
-export default class Main extends React.Component {
-  constructor(){
-    super()
-  }
-
-  render () {
-    return(
-      <div>Hello</div>
-    )
-  }
+const Main = () => {
+  return (
+    <div>
+      <Navbar />
+      <Routes />
+    </div>
+  )
 }
+
+export default Main
