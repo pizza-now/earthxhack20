@@ -43,3 +43,19 @@ body {
   padding: 0 10px;
   color: black;
 }
+
+/* Signup & Login */
+#Signup-Login {
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  max-height: 500px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #bfdbf7;
+  z-index: 100;
+  padding: 75px;
+  border-radius: 16px;
+}

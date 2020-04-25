@@ -7,29 +7,65 @@ import { auth } from '../store'
  * COMPONENT
  */
 const AuthForm = props => {
-  const { name, displayName, handleSubmit, error } = props
+  const {name, displayName, handleSubmit, error} = props
 
   return (
-    <div>
+    <div id="Signup-Login">
       <form onSubmit={handleSubmit} name={name}>
-        <div>
-          <label htmlFor="email">
-            <small>Email</small>
-          </label>
-          <input name="email" type="text" />
-        </div>
-        <div>
-          <label htmlFor="password">
-            <small>Password</small>
-          </label>
-          <input name="password" type="password" />
-        </div>
-        <div>
-          <button type="submit">{displayName}</button>
-        </div>
+        {name === 'login' ? (
+          <div>
+            <h3>Welcome back! Sign in here:</h3>
+            <label htmlFor="email">
+              <small>Email</small>
+            </label>
+            <input name="email" type="text" />
+            <div>
+              <label htmlFor="password">
+                <small>Password</small>
+              </label>
+              <input name="password" type="password" />
+            </div>
+            <div>
+              <button type="submit">{displayName}</button>
+            </div>
+          </div>
+        ) : (
+          <div>
+            <h3>New user? Create an account!</h3>
+            <div>
+              <label htmlFor="fullName">
+              <small>Name</small>
+              </label>
+              <input name="fullName" type="text" />
+            <div>
+
+            </div>
+              <label htmlFor="email">
+                <small>Email</small>
+              </label>
+              <input name="email" type="text" />
+            </div>
+
+            <div>
+              <label htmlFor="password">
+                <small>Password</small>
+              </label>
+              <input name="password" type="password" />
+            </div>
+            <div>
+
+            <div>
+              <label htmlFor="address">
+                <small>Address (optional)</small>
+              </label>
+              <input name="address" type="text" />
+            </div>
+              <button type="submit">{displayName}</button>
+            </div>
+          </div>
+        )}
         {error && error.response && <div> {error.response.data} </div>}
       </form>
-      {/* <a href="/auth/google">{displayName} with Google</a> */}
     </div>
   )
 }
@@ -62,9 +98,17 @@ const mapDispatch = dispatch => {
     handleSubmit(evt) {
       evt.preventDefault()
       const formName = evt.target.name
-      const email = evt.target.email.value
-      const password = evt.target.password.value
-      dispatch(auth(email, password, formName))
+      if (formName === "signup"){
+        const email = evt.target.email.value
+        const password = evt.target.password.value
+        const fullName = evt.target.fullName.value
+        const address = evt.target.address.value
+        dispatch(auth(email, password, fullName, address, formName))
+      } else {
+        const email = evt.target.email.value
+        const password = evt.target.password.value
+        dispatch(auth(email, password, formName))
+      }
     }
   }
 }
