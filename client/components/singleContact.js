@@ -9,15 +9,17 @@ const SingleContact = (props) => {
   const setUpdateForm = () => !form ? setForm(<UpdateContactForm />) : setForm('')
 
   return (
-    <div>
+    <div className="single-contact">
       <p>Name: {props.contact.fullName}</p>
       <p>Email: {props.contact.email}</p>
       <p>Phone number: {props.contact.phoneNumber}</p>
 
-      <button onClick={setUpdateForm} className='button'>Update</button>
-      {form ? <UpdateContactForm contact={props.contact} setForm={setUpdateForm} /> : ''}
+      <div className="referral-buttons">
+        <button onClick={setUpdateForm} className='button'>Update</button>
+        {form ? <UpdateContactForm contact={props.contact} setForm={setUpdateForm} /> : ''}
 
-      <button onClick={() => dispatch(deleteContact(props.contact.id))}>Remove referral</button>
+      <button onClick={() => dispatch(deleteContact(props.contact.id))} className='button'>Delete</button>
+      </div>
     </div>
   )
 }

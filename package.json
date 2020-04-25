@@ -9,7 +9,9 @@
     "start": "npm run start-server & npm run build-watch",
     "start-dev": "NODE_ENV='development' npm run build-watch & NODE_ENV='development' npm run start-server",
     "start-server": "nodemon server -e html,js,scss --ignore public --ignore client",
-    "build-watch": "webpack -w"
+    "build-watch": "webpack -w",
+    "deploy": "script/deploy",
+    "heroku-token": "script/encrypt-heroku-auth-token.js"
   },
   "author": "",
   "license": "ISC",
