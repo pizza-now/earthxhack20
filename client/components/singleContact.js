@@ -12,10 +12,12 @@ const SingleContact = (props) => {
       <p>Email: {props.contact.email}</p>
       <p>Phone number: {props.contact.phoneNumber}</p>
 
-      <button onClick={setUpdateForm} className='button'>Update</button>
-      {form ? <UpdateContactForm contact={props.contact} setForm={setUpdateForm} /> : ''}
+      <div classNames="referral-buttons">
+        <button onClick={setUpdateForm} className='button'>Update</button>
+        {form ? <UpdateContactForm contact={props.contact} setForm={setUpdateForm} /> : ''}
 
-      <button onClick={() => dispatch(deleteContact(contact.id))}>Remove referral</button>
+        <button onClick={() => dispatch(deleteContact(contact.id))} className='button'>Delete</button>
+      </div>
     </div>
   )
 }

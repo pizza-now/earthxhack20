@@ -7,10 +7,10 @@ import { auth } from '../store'
  * COMPONENT
  */
 const AuthForm = props => {
-  const {name, displayName, handleSubmit, error} = props
+  const { name, displayName, handleSubmit, error } = props
 
   return (
-    <div id= "auth-form-container">
+    <div id="auth-form-container">
       <form onSubmit={handleSubmit} name={name}>
         {name === 'login' ? (
           <div>
@@ -30,47 +30,47 @@ const AuthForm = props => {
             </div>
           </div>
         ) : (
-          <div>
-            <h3>New user? Create an account!</h3>
             <div>
-              <label htmlFor="fullName">
-              <small>Name</small>
-              </label>
-              <input name="fullName" type="text" />
-            </div>
+              <h3>New user? Create an account!</h3>
+              <div>
+                <label htmlFor="fullName">
+                  <small>Name</small>
+                </label>
+                <input name="fullName" type="text" />
+              </div>
 
-            <div>
-              <label htmlFor="email">
-                <small>Email</small>
-              </label>
-              <input name="email" type="text" />
-            </div>
+              <div>
+                <label htmlFor="email">
+                  <small>Email</small>
+                </label>
+                <input name="email" type="text" />
+              </div>
 
-            <div>
-              <label htmlFor="number">
-                <small>Phone Number</small>
-              </label>
-              <input name="number" type="text" />
-            </div>
+              <div>
+                <label htmlFor="number">
+                  <small>Phone Number</small>
+                </label>
+                <input name="number" type="text" />
+              </div>
 
-            <div>
-              <label htmlFor="password">
-                <small>Password</small>
-              </label>
-              <input name="password" type="password" />
-            </div>
-            <div>
+              <div>
+                <label htmlFor="password">
+                  <small>Password</small>
+                </label>
+                <input name="password" type="password" />
+              </div>
+              <div>
 
-            <div>
-              <label htmlFor="address">
-                <small>Address (optional)</small>
-              </label>
-              <input name="address" type="text" />
+                <div>
+                  <label htmlFor="address">
+                    <small>Address (optional)</small>
+                  </label>
+                  <input name="address" type="text" />
+                </div>
+                <button type="submit">{displayName}</button>
+              </div>
             </div>
-              <button type="submit">{displayName}</button>
-            </div>
-          </div>
-        )}
+          )}
         {error && error.response && <div> {error.response.data} </div>}
       </form>
     </div>
@@ -105,17 +105,17 @@ const mapDispatch = dispatch => {
     handleSubmit(evt) {
       evt.preventDefault()
       const formName = evt.target.name
-      if (formName === "signup"){
+      if (formName === "signup") {
         const email = evt.target.email.value
         const password = evt.target.password.value
         const fullName = evt.target.fullName.value
         const address = evt.target.address.value
         const number = evt.target.number.value
-        dispatch(auth(email, password, address, fullName, formName, number))
+        dispatch(auth(email, password, address, fullName, number, formName))
       } else {
         const email = evt.target.email.value
         const password = evt.target.password.value
-        dispatch(auth(email, password, formName))
+        dispatch(auth(email, password, null, null, null, formName))
       }
     }
   }

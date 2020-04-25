@@ -33,7 +33,7 @@ export const me = () => async dispatch => {
 export const auth = (email, password, address, fullName, number, method) => async dispatch => {
   let res
   try {
-    if (method === "login"){
+    if (method === "login") {
       res = await axios.post(`/auth/${method}`, { email, password })
     } else {
       res = await axios.post(`/auth/${method}`, { email, password, address, number, fullName })

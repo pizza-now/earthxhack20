@@ -41,18 +41,17 @@ export default function SelectSize() {
 
       </ThemeProvider>
       </div>
-      <div className="customize-section">
 
-
-        <div className="customize">Customize Your Pizza</div>
-          <div>
-            <TextField id="filled-basic" label="(Optional message)" variant="filled" />
-          </div>
-          <button className="button" href= "/confirmation">
-          Submit
-          </button>
-        <div>
-        </div>
+      <div className="customize">Customize Your Pizza</div>
+      <div>
+      <TextField id="filled-basic" label="(Optional message)" variant="filled" />
+      </div>
+      <div>
+        <ThemeProvider theme={theme}>
+      <Button variant="contained" color="primary" href= "/confirmation">
+        Submit
+      </Button>
+      </ThemeProvider>
       </div>
     </div>
   );

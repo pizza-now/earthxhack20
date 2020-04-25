@@ -20,8 +20,8 @@ h2 {
   padding: 8px;
   font-size: 16px;
   border-radius: 3px;
-  max-width: 125px;
-  margin-top: 16px;
+  max-width: 150px;
+  margin: 16px;
   border: none;
 }
 
@@ -48,7 +48,6 @@ input {
   position: sticky;
   height: 100px;
   width: 100%;
-  top: 0;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -57,12 +56,16 @@ input {
   background-color: #cc0f00;
   z-index: 100;
   letter-spacing: 0.025em;
+}
+
+.nav-container a {
+  color: #fff;
   padding: 16px;
 }
 
 .logo {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
 }
 
 .navbar-links {
@@ -73,6 +76,7 @@ input {
   justify-content: space-evenly;
   padding: 0 10px;
   font-family: 'Palatino Linotype', 'Book Antiqua';
+  color: #fff;
 }
 
 .navbar-links a {
@@ -157,7 +161,7 @@ input {
 /* Guest Checkout */
 #guest-message{
   width: 100%;
-  margin-top: 10 px;
+  margin-top: 10px;
   align-items: center;
   display: flex;
   justify-content: center;
@@ -173,4 +177,24 @@ input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.customize {
+  padding: 20px;
+}
+
+.single-contact {
+  border: solid 3px #2EC4B6;
+  padding: 16px;
+  border-radius: 3px;
+  max-width: 500px;
+  margin: 16px 0;
+}
+
+
+.referral-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
 }
