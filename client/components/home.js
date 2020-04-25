@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 
-
 const images = [
   {
     url: 'https://www.aviglatt.com/ncmedia/ncproducts/pizza_2.jpg',
@@ -29,17 +28,21 @@ const images = [
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    justifyContent: 'center',
     flexWrap: 'wrap',
     minWidth: 300,
     width: '100%',
+    marginTop: 50
   },
   image: {
     position: 'relative',
     height: 200,
+    margin: 15,
     [theme.breakpoints.down('xs')]: {
       width: '100% !important', // Overrides inline-style
       height: 100,
     },
+
     '&:hover, &$focusVisible': {
       zIndex: 1,
       '& $imageBackdrop': {
