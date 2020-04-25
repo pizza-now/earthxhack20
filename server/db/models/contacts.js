@@ -19,13 +19,13 @@ const Contact = db.define('contact', {
     }
   },
   phoneNumber: {
-      type: Sequelize.INTEGER,
-      unique: true,
-      allowNull: true,
-      validate: {
-        notEmpty: false,
-      }
+    type: Sequelize.STRING,
+    unique: true,
+    allowNull: true,
+    validate: {
+      notEmpty: false,
     }
+  }
 })
 
 module.exports = Contact
