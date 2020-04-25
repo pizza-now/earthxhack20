@@ -1,7 +1,10 @@
-import {Link} from 'react-router-dom'
 import React from 'react'
+import PropTypes from 'prop-types'
+import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
+import {logout} from '../store'
 
-const Navbar = () => {
+const Navbar = ({handleClick, isLoggedIn}) => {
   return (
     <div className="nav-container">
       <Link to='/'>
@@ -9,13 +12,45 @@ const Navbar = () => {
           <img src={'/assets/pizza-now.png'} alt="logo" className="logo"/>
         </div>
       </Link>
-
       <nav className="navbar-links">
+      {isLoggedIn ? (
+        <div>
+          <Link to="/home">Home</Link>
+          <Link to="/referrals">Refer A Friend</Link>
+          <a href="#" onClick={handleClick}>
+          Logout
+          </a>
+        </div>
+        ):(
+          <div>
         <Link to="/guest">Guest Checkout</Link>
-        <Link to="/referrals">Refer A Friend</Link>
+        </div>)}
       </nav>
     </div>
   )
 }
 
-export default Navbar
+const mapState = state => {
+  console.log('STATE',state)
+  return {
+    isLoggedIn: !!state.user
+  }
+}
+
+const mapDispatch = dispatch => {
+  return {
+    handleClick() {
+      dispatch(logout())
+    }
+  }
+}
+
+export default connect(mapState, mapDispatch)(Navbar)
+
+/**
+ * PROP TYPES
+ */
+Navbar.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+  isLoggedIn: PropTypes.bool.isRequired
+}
