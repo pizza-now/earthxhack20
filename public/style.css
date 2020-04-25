@@ -1,5 +1,15 @@
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
+  color: #011627;
+}
+
+a {
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+}
+
+h2 {
+  font-size: 18px;
 }
 
 /* Navigation bar */
@@ -7,7 +17,7 @@ body {
 .nav-container {
   position: sticky;
   top: 0;
-  height: 60px;
+  height: 100px;
   margin: -10px;
   width: 101.25%;
   top: 0;
@@ -16,18 +26,20 @@ body {
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  background-color: #dbd5d5;
+  background-color: #cc0f00;
   color: black;
   z-index: 100;
   letter-spacing: 0.025em;
+  padding: 16px;
 }
 
-.nav-logo {
-  padding-left: 30px;
-  flex: 1;
-  text-align: left;
-  font-family: 'Palatino Linotype', 'Book Antiqua';
+.logo {
+  width: 100px;
+  height: 100px;
 }
+
+
+
 
 .navbar-links {
   display: inline-block;
@@ -43,3 +55,30 @@ body {
   padding: 0 10px;
   color: black;
 }
+
+.splash-options {
+  padding-top: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.splash-card {
+  background-color: #fff;
+  border: solid 2px #2EC4B6;
+  color: #011627;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+
+.auth-form {
+  padding-top: 50px;
+}
+

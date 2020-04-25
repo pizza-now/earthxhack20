@@ -1,12 +1,17 @@
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import React from 'react'
 
 const Navbar = () => {
   return (
     <div className="nav-container">
-      <h1 className="nav-logo">Pizza NOW</h1>
+      <Link to='/'>
+        <div className="nav-logo">
+          <img src={'/assets/pizza-now.png'} alt="logo" className="logo"/>
+        </div>
+      </Link>
+
       <nav className="navbar-links">
-        <Link to="/guest">Quick Checkout/Guest Checkout</Link>
+        <Link to="/guest">Guest Checkout</Link>
       </nav>
     </div>
   )
