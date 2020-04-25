@@ -20,21 +20,21 @@ export default function SelectSize() {
     <ThemeProvider theme={theme}>
     <div className ="single-size">
       <img src ={'https://clipartion.com/wp-content/uploads/2015/10/whole-pepperoni-pizza-clipart-pizza-set-royalty-free-cliparts.jpg'} width={140} height={140} mode='fit' />
-      <Button variant="contained" color="primary">
+      <Button className="size-button" variant="contained" color="primary">
         Small
       </Button>
       </div>
 
       <div className ="single-size">
       <img src ={'https://clipartion.com/wp-content/uploads/2015/10/whole-pepperoni-pizza-clipart-pizza-set-royalty-free-cliparts.jpg'} width={175} height={175} mode='fit' />
-      <Button variant="contained" color="primary">
+      <Button className="size-button" variant="contained" color="primary">
         Medium
       </Button>
       </div>
 
       <div className ="single-size">
       <img src ={'https://clipartion.com/wp-content/uploads/2015/10/whole-pepperoni-pizza-clipart-pizza-set-royalty-free-cliparts.jpg'} width={225} height={225} mode='fit' />
-      <Button variant="contained" color="primary">
+      <Button className="size-button" variant="contained" color="primary">
         Large
       </Button>
       </div>
