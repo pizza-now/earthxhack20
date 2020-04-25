@@ -15,36 +15,36 @@ const theme = createMuiTheme({
 
 export default function SelectSize() {
   return (
+  <div className= "size-container">
     <div className='pizza'>
     <ThemeProvider theme={theme}>
-    <div>
+    <div className ="single-size">
       <img src ={'https://clipartion.com/wp-content/uploads/2015/10/whole-pepperoni-pizza-clipart-pizza-set-royalty-free-cliparts.jpg'} width={140} height={140} mode='fit' />
-      </div>
-      <div>
-      <Button variant="contained" color="primary">
+      <Button className="size-button" variant="contained" color="primary">
         Small
       </Button>
       </div>
-      <div>
+
+      <div className ="single-size">
       <img src ={'https://clipartion.com/wp-content/uploads/2015/10/whole-pepperoni-pizza-clipart-pizza-set-royalty-free-cliparts.jpg'} width={175} height={175} mode='fit' />
-      </div>
-      <div>
-      <Button variant="contained" color="primary">
+      <Button className="size-button" variant="contained" color="primary">
         Medium
       </Button>
       </div>
-      <div>
+
+      <div className ="single-size">
       <img src ={'https://clipartion.com/wp-content/uploads/2015/10/whole-pepperoni-pizza-clipart-pizza-set-royalty-free-cliparts.jpg'} width={225} height={225} mode='fit' />
-      </div>
-      <div>
-      <Button variant="contained" color="primary">
+      <Button className="size-button" variant="contained" color="primary">
         Large
       </Button>
       </div>
+
       </ThemeProvider>
-      <div>Customize Your Pizza</div>
+      </div>
+
+      <div className="customize">Customize Your Pizza</div>
       <div>
-      <TextField id="filled-basic" label="Customize Your Pizza" variant="filled" />
+      <TextField id="filled-basic" label="(Optional message)" variant="filled" />
       </div>
       <div>
         <ThemeProvider theme={theme}>
