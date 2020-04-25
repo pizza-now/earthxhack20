@@ -48,7 +48,7 @@ export default function SelectSize() {
       </div>
       <div>
         <ThemeProvider theme={theme}>
-      <Button variant="contained" color="primary" href= "/referrals">
+      <Button variant="contained" color="primary" href= "/confirmation">
         Submit
       </Button>
       </ThemeProvider>
