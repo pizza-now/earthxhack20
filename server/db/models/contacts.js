@@ -11,7 +11,6 @@ const Contact = db.define('contact', {
   },
   email: {
     type: Sequelize.STRING,
-    unique: true,
     allowNull: true,
     validate: {
       notEmpty: false,
@@ -19,8 +18,7 @@ const Contact = db.define('contact', {
     }
   },
   phoneNumber: {
-      type: Sequelize.INTEGER,
-      unique: true,
+      type: Sequelize.STRING,
       allowNull: true,
       validate: {
         notEmpty: false,

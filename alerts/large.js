@@ -25,4 +25,13 @@ const Large = (props) => {
       )
 }
 
+const mapState = state => {
+      return {
+        userName: state.user.fullName,
+        contactName: state.contact.fullName,
+        userAddress: state.user.addres,
+        userPhone: state.user.number,
+      }
+}
+
 export default connect(mapState)(Large)

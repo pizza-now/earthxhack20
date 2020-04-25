@@ -27,4 +27,14 @@ const Medium = (props) => {
       )
 }
 
+const mapState = state => {
+      return {
+        userName: state.user.fullName,
+        contactName: state.contact.fullName,
+        userAddress: state.user.addres,
+        userPhone: state.user.number,
+        keyword: state.user.keyword
+      }
+}
+
 export default connect(mapState)(Medium)
