@@ -23,6 +23,7 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
+    "@material-ui/core": "^4.9.11",
     "axios": "^0.19.2",
     "compression": "^1.7.4",
     "connect-session-sequelize": "^6.1.1",
