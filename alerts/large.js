@@ -15,7 +15,7 @@ const Large = (props) => {
             <div>
                   Hi {contactName},
                   <br/>
-                  You are receiving this alert from {userName} via the Pizza Now app because XXX. They are currently located at {userAddress} and you can keep track of their location using *geolocation*. {userName} is in danger and requires immediate help. Please contact the authorities and make your way to {userName}'s location.
+                  You are receiving this alert from {userName} via the Pizza Now app because of a domestic violence situation that requires immediate action. They are currently located at {userAddress} and you can keep track of their location using *geolocation*. {userName} is in danger and requires immediate help. Please contact the authorities and make your way to {userName}'s location.
                   <br/>
                   Stay Safe,
                   <br/>
