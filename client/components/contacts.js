@@ -15,17 +15,17 @@ const Contacts = () => {
   }, [])
 
   return (
-    <div>
-      <h1>People you've referred:</h1>
+    <div className="referred-page">
+      <h2>People you've referred:</h2>
       {contacts.length ? (
         contacts.map(contact => (
           <SingleContact key={contact.id} contact={contact} />
         ))
       ) : (
-          <div>No friends referred yet </div>
+          <div className="no-referrals">No friends referred yet </div>
         )
       }
-      <button onClick={setAddForm} className='button'>Refer a friend</button>
+      <button className="button" onClick={setAddForm} className='button'>Refer a friend</button>
       {form ? <AddContactForm setForm={setAddForm} /> : ''}
     </div>
   )

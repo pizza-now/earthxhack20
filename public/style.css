@@ -10,6 +10,35 @@ a {
 
 h2 {
   font-size: 18px;
+  margin: 20px 0;
+}
+
+.button {
+  background-color: #FF9F1C;
+  color: #fff;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 3px;
+  max-width: 125px;
+  margin-top: 16px;
+  border: none;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  max-width: 500px;
+}
+
+label {
+  padding: 8px 0;
+}
+
+input {
+  border-radius: 3px;
+  padding: 4px;
+  font-size: 16px;
 }
 
 /* Navigation bar */
@@ -136,5 +165,10 @@ h2 {
   align-items: center;
   display: flex;
   justify-content: center;
-
 }
+
+
+.referred-page {
+  padding: 40px;
+}
+

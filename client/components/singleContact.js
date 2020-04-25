@@ -7,7 +7,7 @@ const SingleContact = (props) => {
   const setUpdateForm = () => !form ? setForm(<UpdateContactForm />) : setForm('')
 
   return (
-    <div>
+    <div className="single-contact">
       <p>Name: {props.contact.fullName}</p>
       <p>Email: {props.contact.email}</p>
       <p>Phone number: {props.contact.phoneNumber}</p>
