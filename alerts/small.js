@@ -8,9 +8,7 @@ const Small = (props) => {
             userPhone,
             keyword,
             contactName,
-             
-
-      } 
+      } = props
 
       return (
             <div>
