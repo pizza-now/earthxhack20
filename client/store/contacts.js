@@ -23,15 +23,17 @@ const addedContact = newContact => ({
  */
 export const getContacts = () => async dispatch => {
   try {
-    const { data } = axios.get('/api/contacts')
+    const { data } = await axios.get('/api/contacts')
     dispatch(gotContacts(data))
   } catch (error) {
     console.log(error)
   }
 }
+
+
 export const addContact = (contact) => async dispatch => {
   try {
-    const { data } = axios.post('/api/contacts', contact)
+    const { data } = await axios.post('/api/contacts', contact)
     dispatch(addedContact(data))
   } catch (error) {
     console.log(error)

@@ -15,7 +15,7 @@ function AddContactForm() {
       <input type="text" name="fullName" ref={register} />
 
       <label htmlFor="email">Email</label>
-      <input type="number" name="email" ref={register} />
+      <input type="email" name="email" ref={register} />
 
       <label htmlFor="phoneNumber">Phone Number</label>
       <input type="number" name="phoneNumber" ref={register} />
