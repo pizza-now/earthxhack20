@@ -1,6 +1,7 @@
 body {
   font-family: 'Inter', sans-serif;
   color: #011627;
+  margin: 0;
 }
 
 a {
@@ -10,32 +11,61 @@ a {
 
 h2 {
   font-size: 18px;
+  margin: 20px 0;
+}
+
+.button {
+  background-color: #FF9F1C;
+  color: #fff;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 3px;
+  max-width: 150px;
+  margin: 16px;
+  border: none;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  max-width: 500px;
+}
+
+label {
+  padding: 8px 0;
+}
+
+input {
+  border-radius: 3px;
+  padding: 4px;
+  font-size: 16px;
 }
 
 /* Navigation bar */
 
 .nav-container {
   position: sticky;
-  top: 0;
   height: 100px;
-  margin: -10px;
-  width: 101.25%;
-  top: 0;
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
   background-color: #cc0f00;
-  color: black;
   z-index: 100;
   letter-spacing: 0.025em;
+}
+
+.nav-container a {
+  color: #fff;
   padding: 16px;
 }
 
 .logo {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
 }
 
 .navbar-links {
@@ -46,11 +76,12 @@ h2 {
   justify-content: space-evenly;
   padding: 0 10px;
   font-family: 'Palatino Linotype', 'Book Antiqua';
+  color: #fff;
 }
 
 .navbar-links a {
   padding: 0 10px;
-  color: black;
+  color: #fff;
 }
 
 /* Splash page */
@@ -102,39 +133,68 @@ h2 {
   color: red;
 }
 
- div.size-container{
+.size-container{
   padding: 20px;
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left : 50px
  }
 
- div.pizza{
+.pizza{
   padding: 20px;
-  align-items: center;
+  align-items: baseline;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-left : 50px
+  flex-wrap: wrap;
  }
 
- div.single-size{
-  padding: 20px;
+.single-size{
+  padding: 20px 50px;
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left : 50px
  }
 
 /* Guest Checkout */
 #guest-message{
   width: 100%;
-  margin-top: 10 px;
+  margin-top: 10px;
   align-items: center;
   display: flex;
   justify-content: center;
+}
+
+
+.referred-page, .guest-page {
+  padding: 40px;
+}
+
+.customize-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.customize {
+  padding: 20px;
+}
+
+.single-contact {
+  border: solid 3px #2EC4B6;
+  padding: 16px;
+  border-radius: 3px;
+  max-width: 500px;
+  margin: 16px 0;
+}
+
+
+.referral-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 
 }
