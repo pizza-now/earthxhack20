@@ -1,5 +1,6 @@
+import axios from 'axios'
 
-const sendLargeSMS = (user, geolocation, contacts) => {
+const sendLargeSMS = async (user, geolocation, contacts) => {
   var messagebird = require('messagebird')('93Sm3SEFArfNIlcTjXGehBBLQ');
 
   contacts.forEach(contact => {
@@ -16,8 +17,16 @@ const sendLargeSMS = (user, geolocation, contacts) => {
           console.log("SUCCESS:");
           console.log(response);
         }
+
       })
   })
+  const order = {
+    message: body,
+    dateOfSubmission: new Date(),
+    locationOfSubmission: geolocation,
+    userId: user.id
+  }
+  await axios.post('/api/order', order)
 }
 
 module.exports = sendLargeSMS

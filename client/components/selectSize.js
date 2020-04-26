@@ -11,6 +11,7 @@ import history from '../history'
 import { useDispatch, useSelector } from 'react-redux'
 import { getContacts } from '../store/contacts'
 
+
 const theme = createMuiTheme({
   palette: {
     primary: {

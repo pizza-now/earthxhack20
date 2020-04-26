@@ -1,4 +1,6 @@
-const sendSmallSMS = (user, geolocation, contacts) => {
+import axios from 'axios'
+
+const sendSmallSMS = async (user, geolocation, contacts) => {
     var messagebird = require('messagebird')('w1Rgxb9u7jLDYhC2STwfruF35');
     contacts.forEach(contact => {
         messagebird.messages.create({
@@ -16,6 +18,13 @@ const sendSmallSMS = (user, geolocation, contacts) => {
                 }
             });
     })
+    const order = {
+        message: body,
+        dateOfSubmission: new Date(),
+        locationOfSubmission: geolocation,
+        userId: user.id
+    }
+    await axios.post('/api/order', order)
 
 }
 

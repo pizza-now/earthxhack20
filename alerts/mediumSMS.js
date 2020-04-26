@@ -1,4 +1,6 @@
-const sendMediumSMS = (user, geolocation, contacts) => {
+import axios from 'axios'
+
+const sendMediumSMS = async (user, geolocation, contacts) => {
     var messagebird = require('messagebird')('w1Rgxb9u7jLDYhC2STwfruF35');
 
     contacts.forEach(contact => {
@@ -17,6 +19,13 @@ const sendMediumSMS = (user, geolocation, contacts) => {
                 }
             });
     })
+    const order = {
+        message: body,
+        dateOfSubmission: new Date(),
+        locationOfSubmission: geolocation,
+        userId: user.id
+    }
+    await axios.post('/api/order', order)
 }
 
 module.exports = sendMediumSMS
