@@ -50,7 +50,7 @@ input {
 /* Navigation bar */
 
 .nav-container {
-  position: sticky;
+  position: fixed;
   height: 100px;
   width: 100%;
   display: flex;
@@ -61,6 +61,7 @@ input {
   background-color: #cc0f00;
   z-index: 100;
   letter-spacing: 0.025em;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .nav-container a {
@@ -112,7 +113,7 @@ input {
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
-  padding: 40px;
+  padding: 140px 40px;
   display: flex;
   flex-direction: column;
 }
@@ -161,7 +162,7 @@ input {
 
 #auth-form-container {
   color: #011627;
-  padding: 20px;
+  padding: 140px 40px;
 }
 
 
@@ -173,7 +174,7 @@ input {
 }
 
 .size-container{
-  padding: 20px;
+  padding: 80px 40px 40px 40px;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -207,8 +208,8 @@ input {
 }
 
 
-.referred-page, .guest-page {
-  padding: 40px;
+.referred-page, .guest-page, .profile-page {
+  padding: 140px 40px;
 }
 
 .customize-section {
@@ -218,6 +219,7 @@ input {
   align-items: center;
   margin-right: 80px;
 }
+
 @media screen and (max-width: 919px){
   .customize-section {
     margin-right: 0px;
@@ -249,7 +251,7 @@ input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 40px;
+  padding: 140px 40px;
 }
 
 .dropbtn {
@@ -270,7 +272,7 @@ input {
   }
 
   #dropbtnLabel{
-        display: block;
+    display: block;
     background-color: transparent;
     color: white;
     font-size: 250%;

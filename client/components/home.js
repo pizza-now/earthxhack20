@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     minWidth: 300,
     width: '100%',
-    marginTop: 50
+    padding: '140px 40px'
   },
   image: {
     position: 'relative',

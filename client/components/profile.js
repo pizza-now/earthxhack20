@@ -4,7 +4,7 @@ import { useDispatch , useSelector } from 'react-redux';
 import {me} from '../store/user'
 
 const Profile = () => {
-  
+
   const user = useSelector(state => state.user)
   const [form, setForm] = useState('')
   const dispatch = useDispatch()
@@ -15,7 +15,7 @@ const Profile = () => {
   }, [])
 
    return(
-    <div className= 'pizza'>
+    <div className= 'profile-page'>
     <div>
     <h2>My Profile</h2>
     <p>
