@@ -27,25 +27,26 @@ const AuthForm = props => {
         ) : (
             <div className='auth-form'>
               <h3>New user? Create an account!</h3>
-                <label htmlFor="fullName">Name</label>
-                <input name="fullName" type="text" />
+              <label htmlFor="fullName">Name</label>
+              <input name="fullName" type="text" />
 
-                <label htmlFor="email">Email</label>
-                <input name="email" type="text" />
+              <label htmlFor="email">Email</label>
+              <input name="email" type="text" />
 
-                <label htmlFor="number">Phone Number</label>
-                <input name="number" type="text" />
+              <label htmlFor="number">Phone Number</label>
+              <input name="number" type="text" />
 
-                <label htmlFor="password">Password</label>
-                <input name="password" type="password" />
+              <label htmlFor="password">Password</label>
+              <input name="password" type="password" />
 
-                <label htmlFor="address">Address (optional)</label>
-                <input name="address" type="text" />
+              <label htmlFor="address">Address (optional)</label>
+              <input name="address" type="text" />
 
-                <button type="submit" className='button'>{displayName}</button>
+              <button type="submit" className='button'>{displayName}</button>
             </div>
           )}
         {error && error.response && <div> {error.response.data} </div>}
+
       </form>
     </div>
   )

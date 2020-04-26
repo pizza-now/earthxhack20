@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { updateUser } from '../store/user';
 
 
-function UpdateProfile (props) {
+function UpdateProfile(props) {
   const { handleSubmit, register } = useForm();
   const dispatch = useDispatch();
   const onSubmit = values => {
@@ -26,7 +26,7 @@ function UpdateProfile (props) {
       <label htmlFor="keyword">Keyword</label>
       <input type="text" name="keyword" ref={register} defaultValue={props.user.keyword} />
       <button className="button" type="submit">
-        Update
+        Submit
       </button>
     </form>
   );
