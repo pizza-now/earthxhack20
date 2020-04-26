@@ -22,7 +22,7 @@ function UpdateContactForm(props) {
       <input type="number" name="phoneNumber" ref={register} defaultValue={props.contact.phoneNumber} />
 
       <button className="button" type="submit">
-        Update
+        Submit
       </button>
     </form>
   );

@@ -22,7 +22,7 @@ function AddContactForm(props) {
       <input type="number" name="phoneNumber" ref={register} />
 
       <button className="button" type="submit">
-        Add
+        Submit
       </button>
     </form>
   );
