@@ -4,7 +4,7 @@ _There for when you need it_
 
 Created by Natasha Gabuaeva, Devis Mejia, Harmony Richman, Nuzhat Tabassum Tani, and Joy Wang for submission to EarthxHack 2020
 
-The deployed verson can be found at:
+The deployed verson can be found at: pizza-now.herokuapp.com
 
 ## Technologies:
 
