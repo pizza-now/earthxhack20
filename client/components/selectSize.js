@@ -30,6 +30,7 @@ export default function SelectSize() {
   let coords
   useEffect(() => {
     coords = geoFindMe()
+    console.log('coords:', coords)
     setLocation(coords)
     dispatch(getContacts())
   }, [])

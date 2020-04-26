@@ -3,7 +3,7 @@ const db = require('../db')
 
 const Order = db.define('order', {
   message: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: true
   },
   dateOfSubmission: {
