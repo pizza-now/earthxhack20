@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { auth } from '../store'
+import { Link } from 'react-router-dom'
 
 /**
  * COMPONENT
@@ -45,7 +46,7 @@ const AuthForm = props => {
               <button type="submit" className='button'>{displayName}</button>
             </div>
           )}
-        {error && error.response && <div> {error.response.data} Have you created an account with us? Sign-up today!</div>}
+        {error && error.response && <div> {error.response.data} Have you created an account with us? <Link to="/signup">Sign-up today!</Link></div>}
 
       </form>
     </div>
