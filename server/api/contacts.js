@@ -33,7 +33,7 @@ router.post('/', async (req, res, next) => {
       fullName: req.body.fullName,
       email: req.body.email,
       phoneNumber: req.body.phoneNumber,
-      userId: req.user.id 
+      userId: req.user.id
     }
     const createdContact = await Contact.create(newContact)
     res.json(createdContact)
@@ -63,3 +63,12 @@ router.delete('/:contactId', async (req, res, next) => {
     next(err)
   }
 })
+
+// router.get('/tempContact', async (req,res,next)=>{
+//   try{
+//     const userId = req.session.passport.user
+//     cons
+//   }catch(err){
+//     next(err)
+//   }
+// })
