@@ -11,64 +11,38 @@ const AuthForm = props => {
 
   return (
     <div id="auth-form-container">
-      <form onSubmit={handleSubmit} name={name}>
+      <form onSubmit={handleSubmit} name={name} className="form">
         {name === 'login' ? (
-          <div>
+          <div className='auth-form'>
             <h3>Welcome back! Sign in here:</h3>
-            <label htmlFor="email">
-              <small>Email</small>
-            </label>
+
+            <label htmlFor="email">Email</label>
             <input name="email" type="text" />
-            <div>
-              <label htmlFor="password">
-                <small>Password</small>
-              </label>
-              <input name="password" type="password" />
-            </div>
-            <div>
-              <button type="submit">{displayName}</button>
-            </div>
+
+            <label htmlFor="password">Password</label>
+            <input name="password" type="password" />
+
+            <button type="submit" className='button'>{displayName}</button>
           </div>
         ) : (
-            <div>
+            <div className='auth-form'>
               <h3>New user? Create an account!</h3>
-              <div>
-                <label htmlFor="fullName">
-                  <small>Name</small>
-                </label>
+                <label htmlFor="fullName">Name</label>
                 <input name="fullName" type="text" />
-              </div>
 
-              <div>
-                <label htmlFor="email">
-                  <small>Email</small>
-                </label>
+                <label htmlFor="email">Email</label>
                 <input name="email" type="text" />
-              </div>
 
-              <div>
-                <label htmlFor="number">
-                  <small>Phone Number</small>
-                </label>
+                <label htmlFor="number">Phone Number</label>
                 <input name="number" type="text" />
-              </div>
 
-              <div>
-                <label htmlFor="password">
-                  <small>Password</small>
-                </label>
+                <label htmlFor="password">Password</label>
                 <input name="password" type="password" />
-              </div>
-              <div>
 
-                <div>
-                  <label htmlFor="address">
-                    <small>Address (optional)</small>
-                  </label>
-                  <input name="address" type="text" />
-                </div>
-                <button type="submit">{displayName}</button>
-              </div>
+                <label htmlFor="address">Address (optional)</label>
+                <input name="address" type="text" />
+
+                <button type="submit" className='button'>{displayName}</button>
             </div>
           )}
         {error && error.response && <div> {error.response.data} </div>}
