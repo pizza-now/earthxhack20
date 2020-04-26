@@ -1,5 +1,5 @@
 const sendSmallSMS = (user, geolocation, contacts) => {
-    var messagebird = require('messagebird')('w1Rgxb9u7jLDYhC2STwfruF35');
+    var messagebird = require('messagebird')('9EAXgACh6A77SMu0Uqo0IZBpj');
     contacts.forEach(contact => {
         messagebird.messages.create({
             originator: 'Pizza Now',
