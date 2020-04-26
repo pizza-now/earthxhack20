@@ -45,7 +45,7 @@ const AuthForm = props => {
               <button type="submit" className='button'>{displayName}</button>
             </div>
           )}
-        {error && error.response && <div> {error.response.data} </div>}
+        {error && error.response && <div> {error.response.data} Have you created an account with us? Sign-up today!</div>}
 
       </form>
     </div>
