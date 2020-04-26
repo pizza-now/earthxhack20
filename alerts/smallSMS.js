@@ -6,8 +6,8 @@ const sendSmallSMS = () => {
   const userPhone = '0013108833276'
   const keyword = 'mushrooms'
   const contactName = 'Minerva'
-  
-  
+
+
   messagebird.messages.create({
       originator : 'Pizza Now',
       recipients : [ userPhone ],
@@ -22,6 +22,8 @@ const sendSmallSMS = () => {
       console.log(response);
           }
   });
-  }
-  
-sendSmallSMS()
+}
+
+
+
+module.exports = sendSmallSMS

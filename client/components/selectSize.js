@@ -3,6 +3,9 @@ import Button from '@material-ui/core/Button';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { TextField } from '@material-ui/core';
+import { useForm } from 'react-hook-form';
+import sendSmallSMS from '../../alerts/smallSMS'
+
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -14,8 +17,13 @@ const theme = createMuiTheme({
 });
 
 export default function SelectSize() {
+  const { handleSubmit } = useForm();
+  const onSubmit = () => {
+    sendSmallSMS
+  };
+
   return (
-  <div className= "size-container">
+  <form onSubmit={handleSubmit()} className= "size-container">
     <div className='pizza'>
     <ThemeProvider theme={theme}>
     <div className ="single-size">
@@ -53,6 +61,6 @@ export default function SelectSize() {
       </Button>
       </ThemeProvider>
       </div>
-    </div>
+    </form>
   );
 }
