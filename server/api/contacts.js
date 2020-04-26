@@ -29,12 +29,11 @@ router.get('/:contactId', async (req, res, next) => {
 //confirmed this works with Postman
 router.post('/', async (req, res, next) => {
   try {
-
     const newContact = {
       fullName: req.body.fullName,
       email: req.body.email,
       phoneNumber: req.body.phoneNumber,
-      userId: req.user.id
+      userId: req.user.id 
     }
     const createdContact = await Contact.create(newContact)
     res.json(createdContact)

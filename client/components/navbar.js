@@ -44,7 +44,7 @@ const Navbar = ({ handleClick, isLoggedIn }) => {
                 <img src={'/assets/pizza-now.png'} alt="logo" className="logo" />
               </div>
             </Link>
-            <Link to="/guest">Guest Checkout</Link>
+            <Link to="/guest">Quick Checkout</Link>
           </div>)}
 
     </div>
