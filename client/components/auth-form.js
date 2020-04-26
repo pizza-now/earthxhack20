@@ -40,13 +40,13 @@ const AuthForm = props => {
               <label htmlFor="password">Password</label>
               <input name="password" type="password" />
 
-              <label htmlFor="address">Address (optional)</label>
+              <label htmlFor="address">Address</label>
               <input name="address" type="text" />
 
               <button type="submit" className='button'>{displayName}</button>
             </div>
           )}
-        {error && error.response && <div> {error.response.data} Have you created an account with us? <Link to="/signup">Sign-up today!</Link></div>}
+        {error && error.response && <div> {error.response.data}. Have you already created an account with us? <Link to="/signup">Sign-up today!</Link></div>}
 
       </form>
     </div>
