@@ -198,7 +198,15 @@ input {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
 
+/* ORDER CONFIRMATION PAGE */
+.pizza-confirmed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
 }
 
 .dropbtn {
