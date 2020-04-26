@@ -5,12 +5,14 @@ module.exports = router
 //confirmed this works with Postman
 router.get('/', async (req, res, next) => {
   try {
-    const contacts = await Contact.findAll({
-      where: {
-        userId: req.user.id
-      }
-    })
-    res.json(contacts)
+    if (req.user) {
+      const contacts = await Contact.findAll({
+        where: {
+          userId: req.user.id
+        }
+      })
+      res.json(contacts)
+    }
   } catch (err) {
     next(err)
   }
