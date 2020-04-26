@@ -29,6 +29,7 @@ router.get('/:contactId', async (req, res, next) => {
 //confirmed this works with Postman
 router.post('/', async (req, res, next) => {
   try {
+
     const newContact = {
       fullName: req.body.fullName,
       email: req.body.email,
