@@ -180,6 +180,12 @@ input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-right: 80px;
+}
+@media screen and (max-width: 919px){
+  .customize-section {
+    margin-right: 0px;
+  }
 }
 
 .customize {
