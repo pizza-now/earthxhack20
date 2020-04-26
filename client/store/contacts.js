@@ -7,6 +7,8 @@ const GET_CONTACTS = 'GET_CONTACTS'
 const ADD_CONTACT = 'ADD_CONTACT'
 const DELETE_CONTACT = 'DELETE_CONTACT'
 const UPDATE_CONTACT = 'UPDATE_CONTACT'
+const ADD_GUEST_CONTACT = 'ADD_GUEST_CONTACT'
+
 /**
  * INITIAL STATE
  */
@@ -19,6 +21,10 @@ const gotContacts = contacts => ({ type: GET_CONTACTS, contacts })
 
 const addedContact = newContact => ({
   type: ADD_CONTACT, newContact
+})
+
+export const addGuestContact = contact => ({
+  type: ADD_GUEST_CONTACT, contact
 })
 
 const deletedContact = contactId => ({
@@ -81,6 +87,9 @@ export default function (state = defaultContacts, action) {
       return state.filter(contact => (contact.id !== action.contactId))
     case UPDATE_CONTACT:
       return state.map(contact => (contact.id === action.contact.id ? action.contact : contact))
+
+    case ADD_GUEST_CONTACT:
+      return [...state, action.contact]
     default:
       return state
   }
