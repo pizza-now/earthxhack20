@@ -8,7 +8,8 @@ const Order = db.define('order', {
   },
   dateOfSubmission: {
     type: Sequelize.DATE,
-    allowNull: false
+    allowNull: false,
+    defaultValue: Sequelize.NOW
   },
   locationOfSubmission: {
     type: Sequelize.STRING,
