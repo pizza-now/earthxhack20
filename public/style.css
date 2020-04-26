@@ -9,6 +9,10 @@ a {
   font-family: 'Inter', sans-serif;
 }
 
+h1 {
+  font-size: 4em;
+}
+
 h2 {
   font-size: 18px;
   margin: 20px 0;
@@ -60,8 +64,22 @@ input {
 }
 
 .nav-container a {
-  color: #fff;
   padding: 16px;
+}
+
+.quick-checkout {
+  color: #011627;
+  background-color: #fff;
+  border: solid 2px #2EC4B6;
+  padding: 16px;
+  border-radius: 3px;
+  transition: transform .25s;
+}
+
+.quick-checkout:hover {
+  background-color: #2EC4B6;
+  color: #fff;
+  transform: translateY(3px);
 }
 
 .logo {
@@ -87,15 +105,25 @@ input {
 
 /* Splash page */
 
-.splash-options {
-  padding-top: 36px;
+.splash-page {
+  background-image: url('./assets/pizza-with-vegetables-on-a-wooden-table-316-small.jpg');
+  background-color: #fff;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  padding: 40px;
   display: flex;
   flex-direction: column;
+}
+
+.splash-options {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-content: center;
-  width: max-content;
-  margin-left: auto;
-  margin-right: auto;
+  width: min-content;
+  flex-wrap: wrap;
 }
 
 .splash-card {
@@ -106,6 +134,15 @@ input {
   padding: 16px;
   border-radius: 3px;
   text-align: center;
+  min-width: 150px;
+  font-size: 18px;
+  transition: transform .25s;
+}
+
+.splash-card:hover {
+  background-color: #2EC4B6;
+  color: #fff;
+  transform: translateY(3px);
 }
 
 #main {
@@ -118,7 +155,6 @@ input {
 /* login and signup form */
 
 .auth-form {
-  /* padding-top: 50px; */
   display: flex;
   flex-direction: column;
 }
