@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '@material-ui/core/Button';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { TextField } from '@material-ui/core';
+import geoFindMe from './geolocation';
 import sendMediumSMS from '../../alerts/mediumSMS'
 import sendSmallSMS from '../../alerts/smallSMS'
 import sendLargeSMS from '../../alerts/largeSMS'
 import history from '../history'
+import { useDispatch, useSelector } from 'react-redux'
+import { getContacts } from '../store/contacts'
 
 const theme = createMuiTheme({
   palette: {
@@ -19,17 +22,28 @@ const theme = createMuiTheme({
 });
 
 export default function SelectSize() {
+  const dispatch = useDispatch()
+  const user = useSelector(state => state.user)
+  const contacts = useSelector(state => state.contacts)
+  const [location, setLocation] = useState({})
+  let coords
+  useEffect(() => {
+    coords = geoFindMe()
+    setLocation(coords)
+    dispatch(getContacts())
+  }, [])
   const [size, setSize] = useState('')
 
   const messageSender = (size) => {
     if (size === 'Small') {
-      sendSmallSMS()
+      console.log(user, location, contacts)
+      sendSmallSMS(user, location, contacts)
       history.push('/confirmation')
     } else if (size === 'Medium') {
-      sendMediumSMS()
+      sendMediumSMS(user, location, contacts)
       history.push('/confirmation')
     } else {
-      sendLargeSMS()
+      sendLargeSMS(user, location, contacts)
       history.push('/confirmation')
     }
   }
@@ -71,7 +85,9 @@ export default function SelectSize() {
       </div>
       <div>
         <ThemeProvider theme={theme}>
-          <Button variant="contained" color="primary" onClick={() => messageSender(size)} >
+          <Button variant="contained" color="primary" onClick={() => {
+            messageSender(size)
+          }} >
             Submit
       </Button>
         </ThemeProvider>
