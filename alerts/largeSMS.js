@@ -21,7 +21,7 @@ const sendLargeSMS = async (user, geolocation, contacts) => {
       })
   })
   const order = {
-    message: body,
+    message: `Hi *name*, You are receiving this alert from ${user.fullName} via the Pizza Now app because of a domestic violence situation that requires immediate action. ${user.fullName} is in danger and requires immediate help. ${user.fullName} currently located at ${user.address} and you can keep track of their location using ${geolocation}. Please contact the authorities and make your way to ${user.fullName}'s location. Stay Safe - The Pizza Now Team`,
     dateOfSubmission: new Date(),
     locationOfSubmission: geolocation,
     userId: user.id
