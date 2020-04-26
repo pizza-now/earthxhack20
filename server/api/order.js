@@ -4,8 +4,15 @@ module.exports = router
 
 router.post('/', async (req, res, next) => {
   try {
-    let userId = req.user.id ? req.user.id : null
-    await Order.create({ userId: userId }, req.body)
+    const userId = req.user.id ? req.user.id : null
+    console.log(req.body)
+    const newOrder = {
+      message: req.body.message,
+      locationOfSubmission: req.body.locationOfSubmission,
+      userId: userId,
+      dateOfSubmission: req.body.dateOfSubmission
+    }
+    await Order.create(newOrder)
     res.sendStatus(200)
   } catch (error) {
     next(error)

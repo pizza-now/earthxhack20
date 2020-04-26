@@ -1,4 +1,6 @@
-const sendMediumSMS = (user, geolocation, contacts) => {
+import axios from 'axios'
+
+const sendMediumSMS = async (user, geolocation, contacts) => {
     var messagebird = require('messagebird')('w1Rgxb9u7jLDYhC2STwfruF35');
 
     contacts.forEach(contact => {
@@ -17,6 +19,14 @@ const sendMediumSMS = (user, geolocation, contacts) => {
                 }
             });
     })
+    const date = new Date()
+    const order = {
+        message: `Hi *name*, You are receiving this alert from ${user.fullName} via the Pizza Now app because of a domestic violence situation that requires your response. They are currently located at ${user.address} and you can keep track of their location using ${geolocation}. ${user.fullName} would like you to go to their location immediately. They do not feel safe and want you to come get them ASAP. You can reach them at ${user.number}. ${user.fullName}'s emergency word is '${user.keyword}'. If they say '${user.keyword}' when you speak to them it means they are in danger. If they communicate their safety word or you don't get any response from them after receiving this message, please contact the authorities immediately and make your way to ${user.fullName}'s location. Stay Safe - The Pizza Now Team`,
+        dateOfSubmission: date,
+        locationOfSubmission: geolocation,
+        userId: user.id
+    }
+    await axios.post('/api/order', order)
 }
 
 module.exports = sendMediumSMS
