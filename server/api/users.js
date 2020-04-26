@@ -10,7 +10,6 @@ router.put('/:id', async (req, res, next) => {
       where: { id: userId },
       returning: true
     })
-    console.log("API",updatedUser[1][0])
     res.json(updatedUser[1][0])
   } catch (error) {
     next(error)
