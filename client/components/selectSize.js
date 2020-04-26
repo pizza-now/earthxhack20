@@ -11,6 +11,7 @@ import history from '../history'
 import { useDispatch, useSelector } from 'react-redux'
 import { getContacts } from '../store/contacts'
 
+
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -29,6 +30,7 @@ export default function SelectSize() {
   let coords
   useEffect(() => {
     coords = geoFindMe()
+    console.log('coords:', coords)
     setLocation(coords)
     dispatch(getContacts())
   }, [])

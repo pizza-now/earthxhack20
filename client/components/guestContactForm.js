@@ -1,11 +1,15 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { addGuestContact } from '../store/contacts'
 
 function GuestContactForm(props) {
   const { handleSubmit, register } = useForm();
-  const onSubmit = () => {
+  const dispatch = useDispatch();
+  const onSubmit = values => {
+    dispatch(addGuestContact(values))
     props.setForm()
-  };
+  }
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="form">
       <label htmlFor="fullName">Full Name</label>

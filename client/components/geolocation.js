@@ -15,7 +15,7 @@ const geoFindMe = () => {
   if (!navigator.geolocation) {
     console.log('Geolocation is not supported by your browser');
   } else {
-    navigator.geolocation.getCurrentPosition(success, error);
+    navigator.geolocation.getCurrentPosition(success, error)
   }
   return coords
 }
