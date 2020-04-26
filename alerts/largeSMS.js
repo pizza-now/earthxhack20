@@ -1,6 +1,6 @@
 
 const sendLargeSMS = () => {
-  var messagebird = require('messagebird')('w1Rgxb9u7jLDYhC2STwfruF35');
+  var messagebird = require('messagebird')('93Sm3SEFArfNIlcTjXGehBBLQ');
 
   const userName = 'Alice Quimbly'
   const userAddress = '123 South Bent Road'
@@ -23,6 +23,7 @@ const sendLargeSMS = () => {
       }
     });
 }
+
 module.exports = sendLargeSMS
 
 
