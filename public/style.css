@@ -23,6 +23,7 @@ h2 {
   max-width: 150px;
   margin: 16px 16px 16px 0;
   border: none;
+  max-height: 30px;
 }
 
 .form {

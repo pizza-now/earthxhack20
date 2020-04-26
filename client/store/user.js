@@ -41,6 +41,9 @@ export const auth = (email, password, address, fullName, number, method) => asyn
       res = await axios.post(`/auth/${method}`, { email, password, address, number, fullName })
     }
   } catch (authError) {
+    if (authError === 'User already exists') {
+      history.push('/login')
+    }
     return dispatch(getUser({ error: authError }))
   }
 
