@@ -1,36 +1,25 @@
-import React , {useState,useEffect} from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { addGuestContact } from '../store/contacts'
 
 function GuestContactForm(props) {
-  const [fullName, setFullName] = useState('')
-
-  const [email ,setEmail] = useState('')
-
-  const [phoneNumber, setPhoneNumber] =useState('')
-
   const { handleSubmit, register } = useForm();
-  useEffect(()=>{
-    sessionStorage.setItem('Storage', event.target.value)
-  },[fullName,email,phoneNumber])
-
-  const onSubmit = () => {
+  const dispatch = useDispatch();
+  const onSubmit = values => {
+    dispatch(addGuestContact(values))
     props.setForm()
-  };
- const onChange = event =>{
-  setFullName(event.target.value)
-  setEmail(event.target.value)
-  setPhoneNumber(event.target.value)
- }
+  }
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="form">
       <label htmlFor="fullName">Full Name</label>
-      <input type="text" name="fullName" value= {fullName} onChange = {onChange} ref={register} />
+      <input type="text" name="fullName" ref={register} />
 
       <label htmlFor="email">Email</label>
-      <input type="email" name="email" value={email} onChange = {onChange} ref={register} />
+      <input type="email" name="email" ref={register} />
 
       <label htmlFor="phoneNumber">Phone Number</label>
-      <input type="number" name="phoneNumber" value={phoneNumber} onChange = {onChange} ref={register} />
+      <input type="number" name="phoneNumber" ref={register} />
       <button className="button" type="submit">
         Click to Submit
       </button>
