@@ -1,9 +1,11 @@
-function geoFindMe() {
+const geoFindMe = () => {
+  const coords = {}
 
   function success(position) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-    console.log('coords: ', latitude, longitude)
+    coords['latitude'] = latitude
+    coords['longitude'] = longitude
   }
 
   function error() {
@@ -15,7 +17,7 @@ function geoFindMe() {
   } else {
     navigator.geolocation.getCurrentPosition(success, error);
   }
-
+  return coords
 }
 
 export default geoFindMe

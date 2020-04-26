@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '@material-ui/core/Button';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
@@ -16,9 +16,14 @@ const theme = createMuiTheme({
 });
 
 export default function SelectSize() {
+  const [location, setLocation] = useState({})
+  let coords
   useEffect(() => {
-    geoFindMe()
+    coords = geoFindMe()
+    // setLocation(coords)
+    console.log('location from state:', coords)
   })
+
   return (
     <div className="size-container">
       <div className='pizza'>
