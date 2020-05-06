@@ -10,6 +10,7 @@ import sendLargeSMS from '../../alerts/largeSMS'
 import history from '../history'
 import { useDispatch, useSelector } from 'react-redux'
 import { getContacts } from '../store/contacts'
+import BetaBanner from './beta-banner';
 
 
 const theme = createMuiTheme({
@@ -52,12 +53,16 @@ export default function SelectSize() {
 
   return (
     <div className="size-container">
+      <BetaBanner/>
       <div className='pizza'>
         <ThemeProvider theme={theme}>
 
           <div className="single-size">
             <img src={'https://clipartion.com/wp-content/uploads/2015/10/whole-pepperoni-pizza-clipart-pizza-set-royalty-free-cliparts.jpg'} width={140} height={140} mode='fit' />
-            <Button className="size-button" variant="contained" color="primary" onClick={() => setSize('Small')}>
+            <Button className="size-button" variant="contained" color="primary" onClick={() => {
+              useEffect()
+              setSize('Small')
+              }}>
               Small
       </Button>
           </div>
@@ -71,9 +76,10 @@ export default function SelectSize() {
 
           <div className="single-size">
             <img src={'https://clipartion.com/wp-content/uploads/2015/10/whole-pepperoni-pizza-clipart-pizza-set-royalty-free-cliparts.jpg'} width={225} height={225} mode='fit' />
-            <Button className="size-button" variant="contained" color="primary" onClick={() => (
+            <Button className="size-button" variant="contained" color="primary" onClick={() => {
+              useEffect()
               setSize('Large')
-            )}>
+              }}>
               Large
       </Button>
           </div>

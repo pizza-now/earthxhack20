@@ -4,8 +4,8 @@ const geoFindMe = () => {
   function success(position) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-    coords += `latitude: ${latitude}, `
-    coords += `longitude: ${longitude}`
+    coords += `${latitude}, `
+    coords += `${longitude}`
   }
 
   function error() {

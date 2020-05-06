@@ -51,7 +51,6 @@ const Navbar = ({ handleClick, isLoggedIn }) => {
             </Link>
 
           </div>)}
-
     </div>
   )
 }

@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import BetaBanner from "./beta-banner"
 
 const SplashPage = () => {
   return (
 
     <div className='splash-page'>
       <h1>Welcome to Pizza NOW!</h1>
-
     <div className='splash-options'>
 
       <Link to='/login'>
@@ -21,6 +21,7 @@ const SplashPage = () => {
         </div>
       </Link>
     </div>
+      <BetaBanner/>
     </div>
   )
 }
