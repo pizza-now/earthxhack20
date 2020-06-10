@@ -16,22 +16,22 @@ const Profile = () => {
 
    return(
     <div className= 'profile-page'>
-    <div>
+    <div className= 'profile-card'>
     <h2>My Profile</h2>
     <p>
-     Full Name : {user.fullName}
+     <b>Name</b> : {user.fullName}
     </p>
     <p>
-     Email : {user.email}
+     <b>Email</b> : {user.email}
     </p>
     <p>
-      Phone Number : {user.number}
+      <b>Phone Number</b> : {user.number}
     </p>
     <p>
-     Address : {user.address}
+     <b>Address</b> : {user.address}
     </p>
     <p>
-     Keyword: {user.keyword}
+     <b>Keyword</b>: {user.keyword}
     </p>
     </div>
     <div>

@@ -14,73 +14,86 @@ h1 {
 }
 
 h2 {
-  font-size: 18px;
-  margin: 20px 0;
+  font-size: 2em;
 }
 
 .button {
-  background-color: #FF9F1C;
+  background-color: #2EC4B6;
   color: #fff;
-  padding: 8px;
+  padding: 12px;
   font-size: 16px;
   border-radius: 3px;
   max-width: 150px;
-  margin: 16px 16px 16px 0;
   border: none;
-  max-height: 30px;
+  transition: transform .25s;
+}
+
+.button:hover {
+  transform: translateY(3px);
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  margin: 20px 0;
   max-width: 500px;
-}
-
-label {
-  padding: 8px 0;
+  min-width: 500px;
 }
 
 input {
   border-radius: 3px;
-  padding: 4px;
-  font-size: 16px;
+  padding: 12px;
+  font-size: 14px;
+  margin: 16px 0;
 }
 
-/* Navigation bar */
+.error {
+  background-color: #cc0f00;
+  color: #fff;
+  padding: 36px;
+}
 
+.error a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* Beta warning & Navigation bar */
 .nav-container {
   position: fixed;
-  height: 100px;
+  height: auto;
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
   background-color: #cc0f00;
   z-index: 100;
   letter-spacing: 0.025em;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-.nav-container a {
-  padding: 16px;
+.banner {
+  width: 100%;
+  text-align: center;
 }
 
-.quick-checkout {
-  color: #011627;
-  background-color: #fff;
-  border: solid 2px #2EC4B6;
-  padding: 16px;
-  border-radius: 3px;
-  transition: transform .25s;
-}
-
-.quick-checkout:hover {
-  background-color: #2EC4B6;
+.attention {
   color: #fff;
-  transform: translateY(3px);
+  background: linear-gradient(to right bottom, rgb(255, 171, 0), rgb(255, 153, 31)) left top no-repeat;
+  padding: 1em;
+  border: initial;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+.navigation a {
+  padding: 16px;
 }
 
 .logo {
@@ -104,18 +117,7 @@ input {
   color: #fff;
 }
 
-.attention {
-  width: 70%;
-  background-color: grey;
-  opacity: .9;
-  padding: 10px;
-  margin-top: 30px;
-  border-radius: 3px;
-  border: solid 2px rgb(78, 90, 89);
-}
-
 /* Splash page */
-
 .splash-page {
   background-image: url('./assets/pizza-with-vegetables-on-a-wooden-table-316-small.jpg');
   background-color: #fff;
@@ -126,34 +128,38 @@ input {
   padding: 140px 40px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .splash-options {
+  background-color: #fff;
+  text-align: center;
+  width: 75%;
+  padding: 32px;
+  margin-top: 40px;
+  border-radius: 3px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
-  width: min-content;
+  box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12)
+}
+
+.splash-buttons {
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
 }
 
-.splash-card {
-  background-color: #fff;
-  border: solid 2px #2EC4B6;
-  color: #011627;
+.splash-page .button {
+  min-width: 200px;
   margin: 16px;
-  padding: 16px;
-  border-radius: 3px;
-  text-align: center;
-  min-width: 150px;
-  font-size: 18px;
-  transition: transform .25s;
-}
-
-.splash-card:hover {
-  background-color: #2EC4B6;
-  color: #fff;
-  transform: translateY(3px);
 }
 
 #main {
@@ -163,36 +169,49 @@ input {
   justify-content: center;
 }
 
-/* login and signup form */
+/* login and signup forms */
+
+#auth-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./assets/tomatoes.png');
+  background-color: #fff;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  padding: 80px 140px;
+}
 
 .auth-form {
   display: flex;
   flex-direction: column;
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 64px;
+  margin-top: 40px;
+  box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12)
 }
-
-#auth-form-container {
-  color: #011627;
-  padding: 140px 40px;
-}
-
 
 
 /* Select Size Page */
 
-.size-button:focus{
-  color: red;
-}
-
 .size-container{
-  padding: 80px 40px 40px 40px;
+  flex: 4;
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
  }
 
-.pizza{
-  padding: 20px;
+.pizza {
   align-items: baseline;
   display: flex;
   flex-direction: row;
@@ -208,17 +227,52 @@ input {
   justify-content: center;
  }
 
+.single-size .button {
+  background-color: #7a970f;
+  min-width: 80px;
+  margin: 16px;
+}
+
 /* Guest Checkout */
-#guest-message{
+.guest-page {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 180px 40px;
+}
+
+.guest-refer-form {
+  background-color: #dcdcdc;
+  padding: 16px;
+  flex: 1;
+  box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12)
+}
+
+.guest-message{
   width: 100%;
-  margin-top: 10px;
   align-items: center;
   display: flex;
-  justify-content: center;
+  justify-content: left;
+}
+
+.guest-refer-form .form {
+  min-width: 250px;
+}
+
+.guest-refer-form .button {
+  background-color: #011627;
+  color: white;
+  width: 100%;
 }
 
 
-.referred-page, .guest-page, .profile-page {
+.referred-page,.profile-page {
   padding: 140px 40px;
 }
 
@@ -234,10 +288,6 @@ input {
   .customize-section {
     margin-right: 0px;
   }
-}
-
-.customize {
-  padding: 20px;
 }
 
 .single-contact {
@@ -264,12 +314,25 @@ input {
   padding: 140px 40px;
 }
 
+.confirmation-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .dropbtn {
   display: none;
 }
 
 .dropdown{
   display:none
+}
+
+@media screen and (max-width: 768px){
+  .splash-options, .guest-refer-form, .confirmation-message, .profile-card {
+    margin-top: 80px;
+  }
 }
 
 @media screen and (max-width: 414px){
@@ -306,8 +369,6 @@ input {
     flex-wrap: wrap;
     justify-content: center;
   }
-
-
 
   .navbar-links {
     display: none;

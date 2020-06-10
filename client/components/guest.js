@@ -7,9 +7,16 @@ const Guest = () => {
   const setAddForm = () => setForm(<GuestContactForm />)
   return (
     <div className="guest-page">
-      <h2 id="guest-message">Quick cheese pizza is just a click away! Refer a friend to get a free cheese pizza of your choice size!</h2>
-      <GuestContactForm setForm={setAddForm}/>
+
+      <div className='guest-refer-form'>
+      <h3>Daily Deal!</h3>
+        <h4 className="guest-message">
+          Refer a friend to get a free cheese pizza of your choice size! Enter their details here.</h4>
+        <GuestContactForm setForm={setAddForm}/>
+      </div>
+
       <SelectSize/>
+
     </div>
   )
 }
