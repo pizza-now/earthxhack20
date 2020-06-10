@@ -3,12 +3,20 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { logout } from '../store'
+import BetaBanner from "./beta-banner"
 
 const Navbar = ({ handleClick, isLoggedIn }) => {
   return (
     <div>
       {isLoggedIn ? (
         <div className="nav-container">
+
+          <div className='banner'>
+            <BetaBanner/>
+          </div>
+
+          <div className="navigation">
+
           <Link to='/home'>
             <div className="nav-logo">
               <img src={'/assets/pizza-now.png'} alt="logo" className="logo" />
@@ -21,7 +29,7 @@ const Navbar = ({ handleClick, isLoggedIn }) => {
               <Link to="/referrals">Refer A Friend</Link>
               <a href="#" onClick={handleClick}>
                 Logout
-          </a>
+            </a>
             </div>
           </nav>
 
@@ -36,19 +44,28 @@ const Navbar = ({ handleClick, isLoggedIn }) => {
           </a>
             </div>
           </div>
+          </div>
         </div>
       ) : (
           <div className="nav-container">
+            <div className='banner'>
+              <BetaBanner/>
+            </div>
+
+            <div className='navigation'>
+
             <Link to='/'>
               <div className="nav-logo">
                 <img src={'/assets/pizza-now.png'} alt="logo" className="logo" />
               </div>
             </Link>
             <Link to="/guest">
-              <div className='quick-checkout'>
+              <div className='button'>
                 Quick Checkout
               </div>
             </Link>
+
+            </div>
 
           </div>)}
     </div>

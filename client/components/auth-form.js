@@ -15,38 +15,25 @@ const AuthForm = props => {
       <form onSubmit={handleSubmit} name={name} className="form">
         {name === 'login' ? (
           <div className='auth-form'>
-            <h3>Welcome back! Sign in here:</h3>
-
-            <label htmlFor="email">Email</label>
-            <input name="email" type="text" />
-
-            <label htmlFor="password">Password</label>
-            <input name="password" type="password" />
-
+            <h2>Welcome back!</h2>
+            <h3>Sign into your account with your email and password.</h3>
+            <input name="email" type="text" placeholder="Email"/>
+            <input name="password" type="password" placeholder="Password"/>
             <button type="submit" className='button'>{displayName}</button>
           </div>
         ) : (
             <div className='auth-form'>
-              <h3>New user? Create an account!</h3>
-              <label htmlFor="fullName">Name</label>
-              <input name="fullName" type="text" />
-
-              <label htmlFor="email">Email</label>
-              <input name="email" type="text" />
-
-              <label htmlFor="number">Phone Number</label>
-              <input name="number" type="text" />
-
-              <label htmlFor="password">Password</label>
-              <input name="password" type="password" />
-
-              <label htmlFor="address">Address</label>
-              <input name="address" type="text" />
-
+              <h2>Welcome!</h2>
+              <h3>Create an account with the details requested below.</h3>
+              <input name="fullName" type="text" placeholder="Name"/>
+              <input name="email" type="text" placeholder="Email"/>
+              <input name="number" type="text" placeholder="Phone Number"/>
+              <input name="password" type="password" placeholder="Password"/>
+              <input name="address" type="text" placeholder="Address"/>
               <button type="submit" className='button'>{displayName}</button>
             </div>
           )}
-        {error && error.response && <div> {error.response.data}. Have you already created an account with us? <Link to="/signup">Sign-up today!</Link></div>}
+        {error && error.response && <div className='error'> {error.response.data}. Have you already created an account with us? <Link to="/signup">Sign-up today!</Link></div>}
 
       </form>
     </div>

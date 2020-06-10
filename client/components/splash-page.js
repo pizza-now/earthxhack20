@@ -1,27 +1,28 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import BetaBanner from "./beta-banner"
 
 const SplashPage = () => {
   return (
 
     <div className='splash-page'>
-      <h1>Welcome to Pizza NOW!</h1>
-    <div className='splash-options'>
+      <div className='splash-options'>
+        <h1>Pizza NOW!</h1>
+        <h2>We're here to help. Order a pizza today and get speedy delivery.</h2>
 
-      <Link to='/login'>
-        <div className="login" className="splash-card">
-        Login
-        </div>
-      </Link>
+        <div classname="splash-buttons">
+          <Link to='/login'>
+            <button className="button">
+              Login
+            </button>
+          </Link>
 
-      <Link to='/Signup'>
-        <div className="signup" className="splash-card">
-        Signup
+          <Link to='/Signup'>
+            <button className="button">
+              Signup
+            </button>
+          </Link>
         </div>
-      </Link>
-    </div>
-      <BetaBanner/>
+      </div>
     </div>
   )
 }

@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
-import BetaBanner from './beta-banner';
 
 const images = [
   {
@@ -32,8 +31,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     flexWrap: 'wrap',
     minWidth: 300,
-    width: '100%',
-    padding: '140px 40px'
+    padding: '200px 40px'
   },
   image: {
     position: 'relative',
@@ -108,7 +106,6 @@ export default function Home() {
 
   return (
     <div className={classes.root}>
-      <BetaBanner/>
       {images.map((image) => (
         <ButtonBase
           focusRipple

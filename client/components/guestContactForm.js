@@ -12,16 +12,11 @@ function GuestContactForm(props) {
   }
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="form">
-      <label htmlFor="fullName">Full Name</label>
-      <input type="text" name="fullName" ref={register} />
-
-      <label htmlFor="email">Email</label>
-      <input type="email" name="email" ref={register} />
-
-      <label htmlFor="phoneNumber">Phone Number</label>
-      <input type="number" name="phoneNumber" ref={register} />
+      <input type="text" name="fullName" placeholder="Full Name" ref={register} />
+      <input type="email" name="email" ref={register} placeholder="Email"/>
+      <input type="number" name="phoneNumber" ref={register} placeholder="Phone Number"/>
       <button className="button" type="submit">
-        Click to Submit
+        Send referral
       </button>
     </form>
   );
